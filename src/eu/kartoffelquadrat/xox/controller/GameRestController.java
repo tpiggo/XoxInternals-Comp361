@@ -1,9 +1,4 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame.controller;
-
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.LauncherInfo;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.context.request.async.DeferredResult;
+package eu.kartoffelquadrat.xox.controller;
 
 /**
  * Generic interface for REST endpoint methods common to all board game implementations. All methods require the

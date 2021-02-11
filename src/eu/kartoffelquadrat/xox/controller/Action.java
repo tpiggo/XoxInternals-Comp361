@@ -1,4 +1,4 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame.controller;
+package eu.kartoffelquadrat.xox.controller;
 
 /**
  * Generic Action interface for blackboard architecture. Implement your own actions, representing kinds of actions

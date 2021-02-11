@@ -1,4 +1,4 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame.controller;
+package eu.kartoffelquadrat.xox.controller;
 
 /**
  * Custom Exception that is fired whenever the logic is instructed to handle parameters that semantically are not

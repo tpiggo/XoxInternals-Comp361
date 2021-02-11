@@ -1,6 +1,7 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame.controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xox.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
 import java.util.Map;
 
@@ -20,5 +21,5 @@ public interface ActionGenerator {
      * @return
      * @throws LogicException
      */
-    Map<String, Action> generateActions(eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game, PlayerReadOnly player) throws LogicException;
+    Map<String, Action> generateActions(XoxGameReadOnly game, PlayerReadOnly player) throws LogicException;
 }

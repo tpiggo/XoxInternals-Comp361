@@ -1,14 +1,8 @@
-package controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import com.google.gson.Gson;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.ActionGenerator;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
-import model.XoxBoard;
-import model.XoxGame;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.springframework.stereotype.Component;
+import eu.kartoffelquadrat.xox.model.BoardReadOnly;
+import eu.kartoffelquadrat.xox.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -19,7 +13,6 @@ import java.util.Map;
  * @Author: Maximilian Schiedermeier
  * @Date: December 2020
  */
-@Component
 public class XoxActionGenerator implements ActionGenerator {
 
     /**
@@ -30,7 +23,7 @@ public class XoxActionGenerator implements ActionGenerator {
      * @param player as the player object of the participant to test.
      * @return a boolean, indicating whether the provided name is a valid player name.
      */
-    private static boolean isParticipant(XoxGame game, PlayerReadOnly player) {
+    private static boolean isParticipant(XoxGameReadOnly game, PlayerReadOnly player) {
         return game.getPlayerInfo(0).getName().equals(player.getName()) ||
                 game.getPlayerInfo(1).getName().equals(player.getName());
     }
@@ -41,7 +34,7 @@ public class XoxActionGenerator implements ActionGenerator {
      * @param board as the 3x3 grid to be analyzed.
      * @return an array of possible lay actions.
      */
-    private static Map<String, Action> emptyCellsToActions(XoxBoard board, PlayerReadOnly player) throws LogicException {
+    private static Map<String, Action> emptyCellsToActions(BoardReadOnly board, PlayerReadOnly player) throws LogicException {
         Map<String, Action> actionMap = new LinkedHashMap();
 
         // Iterate over board
@@ -66,7 +59,7 @@ public class XoxActionGenerator implements ActionGenerator {
      * @return
      */
     @Override
-    public Map<String, Action> generateActions(eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game, PlayerReadOnly player) throws LogicException {
+    public Map<String, Action> generateActions(XoxGameReadOnly game, PlayerReadOnly player) throws LogicException {
 
         // Verify and cast the game type
         if (game.getClass() != XoxGame.class)

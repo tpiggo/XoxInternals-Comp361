@@ -1,8 +1,6 @@
-package controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xox.model.PlayerReadOnly;
 
 /**
  * Represents the only kind of blackboard action required in Xox. The Claim-Field action encodes a position, specified

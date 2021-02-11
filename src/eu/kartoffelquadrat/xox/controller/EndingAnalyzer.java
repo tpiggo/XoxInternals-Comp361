@@ -1,6 +1,6 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame.controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import org.springframework.stereotype.Component;
+import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
 /**
  * Generic ending analyzer interface. Implement this interface to provide a tailored analyzer that determines when
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @Author: Maximilian Schiedermeier
  * @Date: December 2020
  */
-@Component
 public interface EndingAnalyzer {
-    boolean analyzeAndUpdate(eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game) throws LogicException;
+    boolean analyzeAndUpdate(XoxGameReadOnly game) throws LogicException;
 }

@@ -1,16 +1,6 @@
-package controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.*;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.LauncherInfo;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.GameServiceRegistrationDetails;
-import model.Player;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.Ranking;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.Board;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
-import model.XoxGame;
-
-
+import eu.kartoffelquadrat.xox.model.XoxGame;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -24,28 +14,16 @@ import java.util.Map;
 public class XoxRestController implements GameRestController {
 
     // Injected util beans and own service name.
-    private final TokenResolver tokenResolver;
-    private final GameManager<XoxGame> gameManager;
     private final ActionGenerator actionGenerator;
     private final String gameServiceName;
     private final ActionInterpreter actionInterpreter;
-    // This controller holds an additional BroadCastManager per game.
-    // Calling touch on the manager allows an unblocking of clients that long poll the board resource.
-    private final Map<Long, BroadcastContentManager<Board>> broadcastContentManagers;
     private final long longPollTimeout;
-    @Autowired
+    private final XoxGame game;
     RankingGenerator rankingGenerator;
-    @Autowired
-    GameServiceRegistrationDetails lobbyServiceLocation;
-    @Value("${debug.skip.registration}")
-    private boolean skipTokenValidation;
-    @Autowired
-    private Registrator registrator;
 
 
     public XoxRestController(
-            @Autowired ActionGenerator actionGenerator, GameManager<XoxGame> gameManager, TokenResolver tokenResolver, ActionInterpreter actionInterpreter,
-            @Value("${gameservice.name}") String gameServiceName, @Value("${long.poll.timeout}") long longPollTimeout) {
+            ActionGenerator actionGenerator, XoxGame game, ActionInterpreter actionInterpreter) {
         this.actionGenerator = actionGenerator;
         this.actionInterpreter = actionInterpreter;
         this.gameManager = gameManager;

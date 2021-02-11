@@ -1,9 +1,8 @@
-package controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.EndingAnalyzer;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import model.XoxGame;
-import org.springframework.stereotype.Component;
+
+import eu.kartoffelquadrat.xox.model.XoxGame;
+import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
 /**
  * Util class to determine whether a given xox board state implies that the game is ended.
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Component;
  * @Author: Maximilian Schiedermeier
  * @Date: December 2020
  */
-@Component
 public class XoxEndingAnalyzer implements EndingAnalyzer {
 
     /**
@@ -21,8 +19,7 @@ public class XoxEndingAnalyzer implements EndingAnalyzer {
      * @param game as the xox game object to be analysed and potentially flagged as finished.
      * @return boolean to indicate whether the game is already finished.
      */
-    @Override
-    public boolean analyzeAndUpdate(eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game) throws LogicException {
+    public boolean analyzeAndUpdate(XoxGameReadOnly game) throws LogicException {
 
         if(game.getClass() != XoxGame.class)
             throw new LogicException("Xox Ending Analyzer can only work on instances of Xox games.");

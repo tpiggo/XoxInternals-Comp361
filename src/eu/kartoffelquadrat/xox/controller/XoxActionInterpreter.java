@@ -1,13 +1,7 @@
-package controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.ActionGenerator;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.ActionInterpreter;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import model.XoxGame;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import eu.kartoffelquadrat.xox.model.ModelAccessException;
+import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
 import java.util.Collection;
 
@@ -19,20 +13,19 @@ import java.util.Collection;
  * @Author: Maximilian Schiedermeier
  * @Date: December 2020
  */
-@Component
 public class XoxActionInterpreter implements ActionInterpreter {
 
     private final ActionGenerator actionGenerator;
 
     private final XoxEndingAnalyzer endingAnalyzer;
 
-    public XoxActionInterpreter(@Autowired ActionGenerator actionGenerator, @Autowired XoxEndingAnalyzer endingAnalyzer) {
+    public XoxActionInterpreter(ActionGenerator actionGenerator, XoxEndingAnalyzer endingAnalyzer) {
         this.actionGenerator = actionGenerator;
         this.endingAnalyzer = endingAnalyzer;
     }
 
     @Override
-    public void interpretAndApplyAction(Action action, eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game) throws LogicException, ModelAccessException {
+    public void interpretAndApplyAction(Action action, XoxGameReadOnly game) throws LogicException, ModelAccessException {
 
         // Verify action and game input type
         if (action.getClass() != XoxClaimFieldAction.class)

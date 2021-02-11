@@ -1,18 +1,13 @@
-package controller;
+package eu.kartoffelquadrat.xox.controller;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.RankingGenerator;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.Ranking;
-import model.XoxGame;
-import org.apache.commons.lang.ArrayUtils;
-import org.springframework.stereotype.Component;
+import eu.kartoffelquadrat.xox.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xox.model.XoxGame;
+import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
-@Component
 public class XoxRankingGenerator implements RankingGenerator {
 
     @Override
-    public Ranking computeRanking(eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game) throws LogicException {
+    public Ranking computeRanking(XoxGameReadOnly game) throws LogicException {
 
         // can only be applied on Xox games
         if(game.getClass() != XoxGame.class)
@@ -33,7 +28,7 @@ public class XoxRankingGenerator implements RankingGenerator {
 
         // If the non-creator won, return a ranking that is the inverse of the games player listing.
         if(winnerChar != 'x')
-            ArrayUtils.reverse(rankedPlayers);
+            ArrayUtils.reverse(rankedPlayers); // ToDo: Get rid of library call.
         return new Ranking(rankedPlayers, new int[]{1, 0}, true);
     }
 
@@ -47,11 +42,5 @@ public class XoxRankingGenerator implements RankingGenerator {
             return false;
 
         return !game.getBoard().isThreeInALine();
-    }
-
-    private PlayerReadOnly getWinner(XoxGame game)
-    {
-        // Todo Implement;
-        return null;
     }
 }

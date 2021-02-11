@@ -6,13 +6,13 @@ package eu.kartoffelquadrat.xox.model;
  * @Author: Maximilian Schiedermeier
  * @Date: December 2020
  */
-public class XoxGame implements eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly {
+public class XoxGame implements XoxGameReadOnly {
 
     // Read only access to the parameters of the two involved players.
     private final PlayerReadOnly[] players = new PlayerReadOnly[2];
 
     // Reference to current state of the board
-    XoxBoard board;
+    Board board;
 
     // Internal flag to indicate whether the game has already ended or still running.
     private boolean finished;
@@ -24,7 +24,7 @@ public class XoxGame implements eu.kartoffelquadrat.lobbyservice.samplegame.mode
         players[0] = startPlayer;
         players[1] = secondPlayer;
         currentPlayer = 0;
-        board = new XoxBoard();
+        board = new Board();
     }
 
     public boolean isFinished() {
@@ -45,7 +45,7 @@ public class XoxGame implements eu.kartoffelquadrat.lobbyservice.samplegame.mode
     }
 
     @Override
-    public XoxBoard getBoard() {
+    public Board getBoard() {
         return board;
     }
 
@@ -57,8 +57,8 @@ public class XoxGame implements eu.kartoffelquadrat.lobbyservice.samplegame.mode
         return deepCopy;
     }
 
+    @Override
     public PlayerReadOnly getPlayerInfo(int index) {
-
         return players[index];
     }
 

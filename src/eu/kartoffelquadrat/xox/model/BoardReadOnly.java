@@ -7,4 +7,11 @@ package eu.kartoffelquadrat.xox.model;
  * @Date: December 2020
  */
 public interface BoardReadOnly {
+
+    boolean isEmpty();
+
+    boolean isFull();
+
+    boolean isFree(int xPos, int yPos);
+
 }

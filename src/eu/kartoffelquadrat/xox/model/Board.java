@@ -13,7 +13,7 @@ public class Board implements BoardReadOnly {
     // ' ': empty. 'x': occupied by x, 'o': occupied by o, 'X' winning cell of x, 'O' winning cell of o.
     private final char[][] cells;
 
-    public XoxBoard() {
+    public Board() {
         cells = new char[3][3];
         initCells();
     }
@@ -23,6 +23,7 @@ public class Board implements BoardReadOnly {
      *
      * @return
      */
+    @Override
     public boolean isFull() {
 
         for (int x = 0; x < cells.length; x++) {
