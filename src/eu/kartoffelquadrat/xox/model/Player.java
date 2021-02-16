@@ -47,10 +47,13 @@ public class Player implements PlayerReadOnly {
         return (name == ((Player) other).name) && (preferredColour == ((Player) other).preferredColour);
     }
 
+    /**
+     * builds JSON representation of the player object.
+     *
+     * @return JSON string
+     */
     @Override
     public String toString() {
-        return "Name: " + name + "- PreferredColour: " + preferredColour;
+        return "{name:" + name + ",preferredColour:" + preferredColour + '}';
     }
-
-
 }

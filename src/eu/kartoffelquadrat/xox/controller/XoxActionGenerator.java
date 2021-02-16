@@ -2,8 +2,12 @@ package eu.kartoffelquadrat.xox.controller;
 
 import eu.kartoffelquadrat.xox.model.BoardReadOnly;
 import eu.kartoffelquadrat.xox.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xox.model.XoxGame;
 import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -40,15 +44,33 @@ public class XoxActionGenerator implements ActionGenerator {
         // Iterate over board
         for (int yPos = 0; yPos < 3; yPos++) {
             for (int xPos = 0; xPos < 3; xPos++) {
+
                 // Add an action if the position is free
                 if (board.isFree(xPos, yPos)) {
                     Action action = new XoxClaimFieldAction(xPos, yPos, player);
-                    String actionMd5 = DigestUtils.md5Hex(new Gson().toJson(action)).toUpperCase();
+                    String actionMd5 = actionToHash(action);
                     actionMap.put(actionMd5, action);
                 }
             }
         }
         return actionMap;
+    }
+
+    /**
+     * Computes a unique MD5 checksum based on the string representation of an action object. See:
+     * https://stackoverflow.com/a/5470263
+     *
+     * @param action
+     */
+    private static String actionToHash(Action action) {
+
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] md5sum = md.digest(action.toString().getBytes());
+            return String.format("%032X", new BigInteger(1, md5sum));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("MD5 hashing not supported.");
+        }
     }
 
     /**

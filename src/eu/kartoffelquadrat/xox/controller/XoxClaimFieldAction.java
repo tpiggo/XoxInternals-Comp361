@@ -61,4 +61,16 @@ public class XoxClaimFieldAction implements Action {
 
         return player.equals(otherAction.getPlayer());
     }
+
+    /**
+     * Builds a JSON representation of the action object.
+     * @return
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder("");
+        sb.append("{x:").append(x).append(",y:").append(y).append(",player:").append(player.toString()).append('}');
+        return sb.toString();
+    }
 }
