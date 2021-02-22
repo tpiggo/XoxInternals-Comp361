@@ -36,7 +36,7 @@ public class XoxGame implements XoxGameReadOnly {
     }
 
     @Override
-    public PlayerReadOnly getPlayerByName(String name) throws ModelAccessException {
+    public PlayerReadOnly getPlayerByName(String name) {
         for (PlayerReadOnly player : players) {
             if (player.getName().equals(name))
                 return player;

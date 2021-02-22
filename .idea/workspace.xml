@@ -36,19 +36,6 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,6 +49,10 @@
       <workItem from="1611782048404" duration="20000" />
       <workItem from="1612996437799" duration="1531000" />
       <workItem from="1613080713243" duration="1504000" />
+      <workItem from="1613424451985" duration="51000" />
+      <workItem from="1613514429494" duration="1802000" />
+      <workItem from="1613574650874" duration="62000" />
+      <workItem from="1614005461697" duration="2643000" />
     </task>
     <servers />
   </component>
@@ -81,9 +72,15 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.598.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1613081166884" />
-    <state x="658" y="306" width="604" height="490" key="find.popup" timestamp="1612997279096">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="541" y="0" width="1379" height="1080" key="dock-window-1" timestamp="1613515618159">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="541" y="0" width="1379" height="1080" key="dock-window-1/-1280.606.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1613515618159" />
+    <state x="658" y="289" width="604" height="501" key="find.popup" timestamp="1614006099949">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="658" y="289" width="604" height="501" key="find.popup/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614006099949" />
     <state x="658" y="306" width="604" height="490" key="find.popup/-1280.598.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1612997279096" />
+    <state x="658" y="289" width="604" height="501" key="find.popup/-1280.606.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1613515280296" />
   </component>
 </project>

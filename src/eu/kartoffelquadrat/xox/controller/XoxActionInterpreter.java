@@ -1,6 +1,7 @@
 package eu.kartoffelquadrat.xox.controller;
 
 import eu.kartoffelquadrat.xox.model.ModelAccessException;
+import eu.kartoffelquadrat.xox.model.XoxGame;
 import eu.kartoffelquadrat.xox.model.XoxGameReadOnly;
 
 import java.util.Collection;
@@ -53,7 +54,7 @@ public class XoxActionInterpreter implements ActionInterpreter {
      * Helper method verify if a specific xox action is contained in an actions bundle. The action is identified by grid
      * position and player information.
      */
-    private boolean isValidAction(eu.kartoffelquadrat.lobbyservice.samplegame.model.XoxGameReadOnly game, XoxClaimFieldAction selectedAction) throws LogicException {
+    private boolean isValidAction(XoxGameReadOnly game, XoxClaimFieldAction selectedAction) throws LogicException {
 
         // retrieve all valid actions for player
         Collection<Action> validActions = actionGenerator.generateActions(game, selectedAction.getPlayer()).values();
