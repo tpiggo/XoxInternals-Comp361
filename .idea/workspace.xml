@@ -40,13 +40,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,7 +119,8 @@
       <workItem from="1613424451985" duration="51000" />
       <workItem from="1613514429494" duration="1802000" />
       <workItem from="1613574650874" duration="62000" />
-      <workItem from="1614005461697" duration="3662000" />
+      <workItem from="1614005461697" duration="3710000" />
+      <workItem from="1614020191309" duration="2446000" />
     </task>
     <servers />
   </component>
@@ -141,6 +144,22 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.598.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1613081166884" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1614009228475">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228475" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1614009228474">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.center/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228474" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1614009228474">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.left/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228474" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1614009228475">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228475" />
     <state x="448" y="121" key="SettingsEditor" timestamp="1614008473053">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

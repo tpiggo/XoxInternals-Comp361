@@ -14,6 +14,8 @@ eu/kartoffelquadrat/xoxinternals/controller/ActionGenerator.class
 eu/kartoffelquadrat/xoxinternals/controller/Ranking.class
 eu/kartoffelquadrat/xoxinternals/model/XoxGameReadOnly.class
 eu/kartoffelquadrat/xoxinternals/model/XoxGame.class
+eu/kartoffelquadrat/xoxinternals/controller/XoxActionGenerator.class
 eu/kartoffelquadrat/xoxinternals/controller/RankingGenerator.class
+eu/kartoffelquadrat/xoxinternals/controller/XoxRankingGenerator.class
 eu/kartoffelquadrat/xoxinternals/controller/XoxEndingAnalyzer.class
 eu/kartoffelquadrat/xoxinternals/model/PlayerReadOnly.class
