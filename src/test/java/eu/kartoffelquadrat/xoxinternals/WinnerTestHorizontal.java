@@ -1,13 +1,11 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame;
+package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.EndingAnalyzer;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.xoxlogic.*;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.Ranking;
-import model.XoxGame;
+
+import eu.kartoffelquadrat.xoxinternals.controller.*;
+import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
+import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import org.junit.Test;
 
 import java.util.Map;
@@ -18,14 +16,12 @@ import java.util.Map;
 public class WinnerTestHorizontal extends XoxTestUtils {
 
     @Test
-    public void testWinX() throws ModelAccessException, LogicException {
+    public void testWinX() throws LogicException, ModelAccessException {
 
         // Prepare the game
-        GameManager<XoxGame> xoxGameGameManager = new XoxLocalGameManager();
-        XoxGame game = addDummyGame(xoxGameGameManager, 12345);
-
-        PlayerReadOnly x = game.getPlayerByName("X");
-        PlayerReadOnly o = game.getPlayerByName("O");
+        Player x = new Player("X",  "#000000");
+        Player o = new Player("O",  "#FFFFFF");
+        XoxGame game = new XoxGame(x, o);
 
         // Draw pattern, X begins
         //  X X X   1 3 5

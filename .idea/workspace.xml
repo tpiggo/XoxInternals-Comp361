@@ -45,7 +45,7 @@
       <module name="XoxInternals" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="eu.kartoffelquadrat.xoxinternals.*" />
+          <option name="PATTERN" value="eu.kartoffelquadrat.xoxinternals.ControllerTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,6 +72,35 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrawTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="XoxInternals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.kartoffelquadrat.lobbyservice.samplegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="eu.kartoffelquadrat.xoxinternals" />
+      <option name="MAIN_CLASS_NAME" value="eu.kartoffelquadrat.lobbyservice.samplegame.DrawTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="eu.kartoffelquadrat.xoxinternals in XoxInternals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="XoxInternals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.kartoffelquadrat.xoxinternals.ControllerTest" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="eu.kartoffelquadrat.xoxinternals" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,6 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.eu.kartoffelquadrat.xoxinternals in XoxInternals" />
+        <item itemvalue="JUnit.DrawTest" />
         <item itemvalue="Application.DesktopLauncher" />
       </list>
     </recent_temporary>
@@ -150,7 +181,7 @@
       <workItem from="1614005461697" duration="3710000" />
       <workItem from="1614020191309" duration="2446000" />
       <workItem from="1614028060985" duration="545000" />
-      <workItem from="1614111632880" duration="1092000" />
+      <workItem from="1614111632880" duration="4700000" />
     </task>
     <servers />
   </component>
@@ -158,6 +189,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="727" y="75" key="#Auto_Import" timestamp="1614114100261">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="727" y="75" key="#Auto_Import/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614114100261" />
     <state x="448" y="133" key="#Project_Structure" timestamp="1611685606034">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -174,22 +209,42 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.598.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1613081166884" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1614112456331">
+    <state width="472" height="466" key="DebuggerActiveHint" timestamp="1614114915163">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456331" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1614112456326">
+    <state width="472" height="466" key="DebuggerActiveHint/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614114915163" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1614116342627">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456326" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1614112456325">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614116342627" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1614116342626">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456325" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1614112456327">
+    <state width="1878" height="305" key="GridCell.Tab.0.center/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614116342626" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1614116342625">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456327" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614116342625" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1614116342627">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614116342627" />
+    <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1614115307962">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.bottom/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614115307962" />
+    <state width="1878" height="376" key="GridCell.Tab.1.center" timestamp="1614115307961">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.center/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614115307961" />
+    <state width="1878" height="376" key="GridCell.Tab.1.left" timestamp="1614115307960">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.left/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614115307960" />
+    <state width="1878" height="376" key="GridCell.Tab.1.right" timestamp="1614115307961">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="376" key="GridCell.Tab.1.right/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614115307961" />
     <state x="448" y="121" key="SettingsEditor" timestamp="1614008473053">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -198,11 +253,33 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="541" y="0" width="1379" height="1080" key="dock-window-1/-1280.606.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1613515618159" />
-    <state x="658" y="289" width="604" height="501" key="find.popup" timestamp="1614006099949">
+    <state x="658" y="289" width="604" height="501" key="find.popup" timestamp="1614113570274">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="658" y="289" width="604" height="501" key="find.popup/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614006099949" />
+    <state x="658" y="289" width="604" height="501" key="find.popup/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614113570274" />
     <state x="658" y="306" width="604" height="490" key="find.popup/-1280.598.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1612997279096" />
     <state x="658" y="289" width="604" height="501" key="find.popup/-1280.606.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1613515280296" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/eu/kartoffelquadrat/xoxinternals/XoxTestUtils.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/eu/kartoffelquadrat/xoxinternals/XoxTestUtils.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/XoxInternals$eu_kartoffelquadrat_xoxinternals_in_XoxInternals.ic" NAME="eu.kartoffelquadrat.xoxinternals in XoxInternals Coverage Results" MODIFIED="1614116335967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>eu.kartoffelquadrat.xoxinternals.ControllerTest</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/XoxInternals$All_Tests_with_Coverage.ic" NAME="All Tests with Coverage Coverage Results" MODIFIED="1614116342609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

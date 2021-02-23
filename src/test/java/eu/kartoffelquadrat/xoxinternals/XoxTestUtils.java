@@ -1,25 +1,31 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame;
+package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import model.Player;
-import controller.XoxClaimFieldAction;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import model.XoxGame;
+import eu.kartoffelquadrat.xoxinternals.controller.Action;
+import eu.kartoffelquadrat.xoxinternals.controller.XoxClaimFieldAction;
+import eu.kartoffelquadrat.xoxinternals.controller.XoxController;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
+import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
 
+import java.util.LinkedList;
 import java.util.Map;
 
 public class XoxTestUtils {
 
-    public XoxGame addDummyGame(GameManager<XoxGame> gameGameManager, long gameId) throws ModelAccessException {
+    /**
+     * Creates a new Xox game using the controller singleton.
+     *
+     * @param inverted puts player two as start player if set to true.
+     */
+    public void initGame(boolean inverted) {
 
         // Add test game to gameManager
-        long fakeId = 12345;
-        Player[] players = new Player[2];
-        players[0] = new Player("X", "#CAFFEE");
-        players[1] = new Player("O", "#1C373A");
-        gameGameManager.addGame(gameId, players);
-        return gameGameManager.getGameById(gameId);
-
+        LinkedList<Player> players = new LinkedList<>();
+        players.add(new Player("X", "#FF0000"));
+        players.add(new Player("O", "#00FF00"));
+        String startPlayerName = (inverted?"O":"X");
+        XoxInitSettings initSettings = new XoxInitSettings(players, startPlayerName);
+        XoxController controller = XoxController.getInstance();
+        controller.initGame(initSettings);
     }
 
     /**

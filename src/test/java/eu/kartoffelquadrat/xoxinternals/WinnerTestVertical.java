@@ -1,13 +1,9 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame;
+package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.EndingAnalyzer;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.Ranking;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.xoxlogic.*;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
-import model.XoxGame;
+import eu.kartoffelquadrat.xoxinternals.controller.*;
+import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
+import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import org.junit.Test;
 
 import java.util.Map;
@@ -19,13 +15,12 @@ public class WinnerTestVertical extends XoxTestUtils {
 
     @Test
     public void testWinX() throws ModelAccessException, LogicException {
+        XoxController.getInstance().resetGame();
 
         // Prepare the game
-        GameManager<XoxGame> xoxGameGameManager = new XoxLocalGameManager();
-        XoxGame game = addDummyGame(xoxGameGameManager, 12345);
-
-        PlayerReadOnly x = game.getPlayerByName("X");
-        PlayerReadOnly o = game.getPlayerByName("O");
+        Player x = new Player("X",  "#000000");
+        Player o = new Player("O",  "#FFFFFF");
+        XoxGame game = new XoxGame(x, o);
 
         // Draw pattern, X begins
         //  O X -   2 1 -
@@ -70,7 +65,7 @@ public class WinnerTestVertical extends XoxTestUtils {
         actionInterpreter.interpretAndApplyAction(action5, game);
 
         // At this point the game should be a won by X.
-//        xoxEndingAnalyzer.analyzeAndUpdate(game);
+        // xoxEndingAnalyzer.analyzeAndUpdate(game);
         assert (game.isFinished());
 
         // Verify there is no winner

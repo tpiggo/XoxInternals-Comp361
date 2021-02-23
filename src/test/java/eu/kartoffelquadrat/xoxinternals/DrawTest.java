@@ -1,35 +1,33 @@
 package eu.kartoffelquadrat.lobbyservice.samplegame;
 
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.Action;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.EndingAnalyzer;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.LogicException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.xoxlogic.*;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.ModelAccessException;
-import eu.kartoffelquadrat.lobbyservice.samplegame.model.PlayerReadOnly;
-import eu.kartoffelquadrat.lobbyservice.samplegame.controller.communcationbeans.Ranking;
-import model.XoxGame;
+import eu.kartoffelquadrat.xoxinternals.XoxTestUtils;
+import eu.kartoffelquadrat.xoxinternals.controller.*;
+import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
+import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import org.junit.Test;
 
 import java.util.Map;
 
 /**
- * This tests simulates a XOX game that ends in a draw. The playing is simulated using generated actions.
- *
- *         // ToDo: Add a test where a non-included action is passed.
+ * This tests simulates a XOX game that ends in a draw. The playing is simulated using generated actions. This method
+ * does NOT test the overall controller, but internal business logic.
+ * <p>
+ * // ToDo: Add a test where a non-included action is passed.
  *
  * @author Maximilian Schiedermeier
  */
 public class DrawTest extends XoxTestUtils {
 
     @Test
-    public void testDraw() throws ModelAccessException, LogicException {
+    public void testDraw() throws LogicException, ModelAccessException {
+        XoxController.getInstance().resetGame();
 
         // Prepare the game
-        GameManager<XoxGame> xoxGameGameManager = new XoxLocalGameManager();
-        XoxGame game = addDummyGame(xoxGameGameManager, 12345);
-
-        PlayerReadOnly x = game.getPlayerByName("X");
-        PlayerReadOnly o = game.getPlayerByName("O");
+        Player x = new Player("X",  "#000000");
+        Player o = new Player("O",  "#FFFFFF");
+        XoxGame game = new XoxGame(x, o);
 
         // Draw pattern, X begins
         //  X O X   1 8 9
@@ -92,9 +90,9 @@ public class DrawTest extends XoxTestUtils {
         actionInterpreter.interpretAndApplyAction(action8, game);
 
         // At this point the game should not be flagged finished by an end analyzer
-        assert(!game.isFinished());
+        assert (!game.isFinished());
 //        xoxEndingAnalyzer.analyzeAndUpdate(game);
-        assert(!game.isFinished());
+        assert (!game.isFinished());
 
         // 9)
         xActions = actionGenerator.generateActions(game, x);
@@ -104,14 +102,14 @@ public class DrawTest extends XoxTestUtils {
 
         // At this point the game should be a draw.
 //        xoxEndingAnalyzer.analyzeAndUpdate(game);
-        assert(game.isFinished());
+        assert (game.isFinished());
 
         // Verify there is no winner
         XoxRankingGenerator rankingGenerator = new XoxRankingGenerator();
         Ranking ranking = rankingGenerator.computeRanking(game);
 
         // In case of a draw, both players should hold 0 points.
-        assert(ranking.getScoresDescending()[0] == 0);
-        assert(ranking.getScoresDescending()[1] == 0);
+        assert (ranking.getScoresDescending()[0] == 0);
+        assert (ranking.getScoresDescending()[1] == 0);
     }
 }
