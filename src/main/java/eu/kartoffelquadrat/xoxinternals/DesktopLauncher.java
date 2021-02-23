@@ -33,11 +33,21 @@ public class DesktopLauncher {
         LinkedList<Player> players = new LinkedList<>();
         players.add(new Player("PlayerOne", "#FF0000"));
         players.add(new Player("PlayerTwo", "#00FF00"));
+
+        // Use PlayerTwo as start player
         XoxInitSettings initSettings = new XoxInitSettings(players, players.getLast().getName());
         xoxController.initGame(initSettings);
 
-        System.out.println("Serialized players: " +xoxController.getPlayers());
+        // Print some game details:
+        // Players in seating order:
+        System.out.println("Serialized players: ");
+        System.out.println(xoxController.getPlayers()[0]);
+        System.out.println(xoxController.getPlayers()[1]);
+
+        // Board
         System.out.println("Serialized initial board: "+xoxController.getBoard());
+
+        // Ranking
         System.out.println("Serialized ranking: "+xoxController.getRanking());
     }
 }

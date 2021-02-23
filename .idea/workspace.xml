@@ -39,16 +39,39 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All Tests with Coverage">
+    <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eu.kartoffelquadrat.xoxinternals.DesktopLauncher" />
+      <module name="XoxInternals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.kartoffelquadrat.xoxinternals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All Tests with Coverage" type="JUnit" factoryName="JUnit">
+      <module name="XoxInternals" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,6 +125,11 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DesktopLauncher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,6 +149,8 @@
       <workItem from="1613574650874" duration="62000" />
       <workItem from="1614005461697" duration="3710000" />
       <workItem from="1614020191309" duration="2446000" />
+      <workItem from="1614028060985" duration="545000" />
+      <workItem from="1614111632880" duration="1092000" />
     </task>
     <servers />
   </component>
@@ -144,22 +174,22 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.598.1280.777/0.23.1920.1057@0.23.1920.1057" timestamp="1613081166884" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1614009228475">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1614112456331">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228475" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1614009228474">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456331" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1614112456326">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228474" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1614009228474">
+    <state width="1878" height="305" key="GridCell.Tab.0.center/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456326" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1614112456325">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228474" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1614009228475">
+    <state width="1878" height="305" key="GridCell.Tab.0.left/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456325" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1614112456327">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614009228475" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/-1280.575.1280.800/0.0.1920.1080@0.0.1920.1080" timestamp="1614112456327" />
     <state x="448" y="121" key="SettingsEditor" timestamp="1614008473053">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

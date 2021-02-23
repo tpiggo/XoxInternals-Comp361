@@ -99,4 +99,25 @@ public class Board implements BoardReadOnly {
     public boolean isEmpty() {
         return false;
     }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder("");
+
+        sb.append("\n -------------\n");
+        for (int x = 0; x < cells.length; x++) {
+            sb.append(" | ");
+            for (int y = 0; y < cells[x].length; y++) {
+                if(cells[x][y] == ' ')
+                    sb.append('.');
+                else
+                    sb.append(cells[x][y]).charAt(0);
+                    sb.append(" | ");
+            }
+            sb.append("\n");
+            sb.append(" -------------\n");
+        }
+        return sb.toString();
+    }
 }

@@ -16,7 +16,7 @@ public class Ranking {
     // Represents all players, ranked by their scored in descending order.
     private final PlayerReadOnly[] playersDescending;
 
-    // Represents the scores of all players, in descending order. (players match playerDecending array order)
+    // Represents the scores of all players, in descending order. (players match playerDescending array order)
     private final int[] scoresDescending;
 
     public Ranking(PlayerReadOnly[] playersDescending, int[] scoresDescending, boolean gameOver) {
@@ -48,5 +48,14 @@ public class Ranking {
 
     public boolean isGameOver() {
         return gameOver;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder("Players in descending order:\n");
+        sb.append(playersDescending[0]).append(" -> ").append("Longest line: ").append(scoresDescending[0]).append("\n");
+        sb.append(playersDescending[1]).append(" -> ").append("Longest line: ").append(scoresDescending[1]).append("\n");
+        return sb.toString();
     }
 }
