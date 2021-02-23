@@ -1,4 +1,4 @@
-# Book Store
+# Xox
 
 Server side java code of a simple game for academic case studies.
 
