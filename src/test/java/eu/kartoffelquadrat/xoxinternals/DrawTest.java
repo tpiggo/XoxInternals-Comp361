@@ -13,8 +13,6 @@ import java.util.Map;
 /**
  * This tests simulates a XOX game that ends in a draw. The playing is simulated using generated actions. This method
  * does NOT test the overall controller, but internal business logic.
- * <p>
- * // ToDo: Add a test where a non-included action is passed.
  *
  * @author Maximilian Schiedermeier
  */

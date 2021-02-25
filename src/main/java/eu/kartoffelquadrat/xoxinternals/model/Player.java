@@ -3,8 +3,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
 /**
  * Encodes minimal information required for launch instructions.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class Player implements PlayerReadOnly {
 

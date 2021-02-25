@@ -11,8 +11,7 @@ import java.util.Collection;
  * request to lay on a given position. The ActionInterpreter verifies that the action is legal for the provided user. If
  * this is the case the provided Xox model instance is modified as requested.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class XoxActionInterpreter implements ActionInterpreter {
 

@@ -10,6 +10,7 @@ import java.util.Set;
 
 /**
  * Unit tests for the actual controller to be exposed through RESTify.
+ *
  * @author Maximilian Schiedermeier
  */
 public class ControllerTest extends XoxTestUtils {

@@ -3,8 +3,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
 /**
  * Represents the state of a Xox running game.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class XoxGame implements XoxGameReadOnly {
 

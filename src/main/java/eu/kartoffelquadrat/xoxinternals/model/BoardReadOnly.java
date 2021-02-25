@@ -3,8 +3,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
 /**
  * Read Only board interface for Xox boards.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public interface BoardReadOnly {
 

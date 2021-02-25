@@ -4,8 +4,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
  * Xox specific implementation of the board interface. Encodes 3x3 matrix with individually maintained state model per
  * cell.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class Board implements BoardReadOnly {
 
@@ -13,6 +12,9 @@ public class Board implements BoardReadOnly {
     // ' ': empty. 'x': occupied by x, 'o': occupied by o, 'X' winning cell of x, 'O' winning cell of o.
     private final char[][] cells;
 
+    /**
+     * Default constructor for Xox boards. Creates an empty 3x3 cell matrix.
+     */
     public Board() {
         cells = new char[3][3];
         initCells();
@@ -21,7 +23,7 @@ public class Board implements BoardReadOnly {
     /**
      * Iterates of a board and returns true if all cells are populated.
      *
-     * @return
+     * @return boolean telling whether the xox is full.
      */
     @Override
     public boolean isFull() {
@@ -38,7 +40,7 @@ public class Board implements BoardReadOnly {
     /**
      * Insepcts the cells and returns true if three equal symbols lie on row, column or main diagonal.
      *
-     * @return
+     * @return boolean telling whether on the current board there are three cells in a line, claimed by the same player.
      */
     public boolean isThreeInALine() {
 

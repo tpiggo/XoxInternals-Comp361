@@ -15,12 +15,18 @@ public class DesktopLauncher {
 
     /**
      * The desktop launcher has no relevance for a REST case study. However it can be run to test the backend.
+     *
+     * @param args as optional argument. Currently not in use.
      */
     public static void main(String[] args) {
 
         playXox();
     }
 
+    /**
+     * Sample method to set up a demo game and query initialized parameter. This doe snot replace unit tests and is only
+     * for demo purposes (how use the XoxController).
+     */
     public static void playXox() {
 
         XoxController xoxController = XoxController.getInstance();
@@ -45,9 +51,9 @@ public class DesktopLauncher {
         System.out.println(xoxController.getPlayers()[1]);
 
         // Board
-        System.out.println("Serialized initial board: "+xoxController.getBoard());
+        System.out.println("Serialized initial board: " + xoxController.getBoard());
 
         // Ranking
-        System.out.println("Serialized ranking: "+xoxController.getRanking());
+        System.out.println("Serialized ranking: " + xoxController.getRanking());
     }
 }

@@ -11,8 +11,7 @@ import java.util.Map;
  * controller do not support error handling. In case of bad parameters, the controller will simply ignore a method call
  * or return an empty return object.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class XoxController {
 
@@ -40,7 +39,7 @@ public class XoxController {
      * Singleton access method to obtain the controller instance. First call implicitly initializes a new game for
      * players "X" and "O".
      *
-     * @return
+     * @return unique singleton representative of this class.
      */
     public static XoxController getInstance() {
         if (singletonReference == null)
@@ -59,6 +58,8 @@ public class XoxController {
 
     /**
      * Creates a new game entity with the parameters specified as payload. (players, preferredColours).
+     *
+     * @param initSettings as a settings bundle specifying details for the new game. (Player names, player colours, creator)
      */
     public void initGame(XoxInitSettings initSettings) {
 
@@ -172,6 +173,8 @@ public class XoxController {
     /**
      * Returns current player scores as a serialized ranking object. The ranking object also tells if the game has
      * already ended.
+     *
+     * @return a ranking bundle object with details on the players and their scores.
      */
     public Ranking getRanking() {
 

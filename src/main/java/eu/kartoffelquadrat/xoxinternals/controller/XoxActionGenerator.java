@@ -14,8 +14,7 @@ import java.util.Map;
 /**
  * Analyzes a Xox game and generates a collection of valid actions for a player.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class XoxActionGenerator implements ActionGenerator {
 
@@ -37,6 +36,7 @@ public class XoxActionGenerator implements ActionGenerator {
      *
      * @param board as the 3x3 grid to be analyzed.
      * @return an array of possible lay actions.
+     * @throws LogicException in case one of the resulting player actions could not be correctly created.
      */
     private static Map<String, Action> emptyCellsToActions(BoardReadOnly board, PlayerReadOnly player) throws LogicException {
         Map<String, Action> actionMap = new LinkedHashMap();
@@ -78,7 +78,7 @@ public class XoxActionGenerator implements ActionGenerator {
      * @param player as the player object defining the participant for why tha action bundle shall be created. Can be
      *               null, if en empty actions set must be generated for an observer who does not actively participate
      *               in the game.
-     * @return
+     * @return Map translating from unique action identifiers to the actual actions.
      */
     @Override
     public Map<String, Action> generateActions(XoxGameReadOnly game, PlayerReadOnly player) throws LogicException {

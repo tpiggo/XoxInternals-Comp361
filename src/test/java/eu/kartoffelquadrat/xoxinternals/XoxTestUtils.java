@@ -9,6 +9,11 @@ import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
 import java.util.LinkedList;
 import java.util.Map;
 
+/**
+ * Helper methods required by various JUnit tests.
+ *
+ * @author Maximilian Schiedermeier
+ */
 public class XoxTestUtils {
 
     /**

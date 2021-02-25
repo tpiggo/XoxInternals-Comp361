@@ -7,8 +7,7 @@ import eu.kartoffelquadrat.xoxinternals.model.XoxGameReadOnly;
 /**
  * Util class to determine whether a given xox board state implies that the game is ended.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public class XoxEndingAnalyzer implements EndingAnalyzer {
 

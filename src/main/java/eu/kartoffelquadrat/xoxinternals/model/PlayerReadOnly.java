@@ -3,22 +3,21 @@ package eu.kartoffelquadrat.xoxinternals.model;
 /**
  * Read only interface for properties of a player, as provided by the LobbyService.
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public interface PlayerReadOnly {
 
     /**
      * Getter for the name of a player.
      *
-     * @return
+     * @return name of a player
      */
     String getName();
 
     /**
      * Getter for the preferred colour of a player.
      *
-     * @return
+     * @return hexadecimal colour string, e.g. #CAFFEE
      */
     String getPreferredColour();
 

@@ -3,8 +3,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
 /**
  * Read-only interface for Xox game model
  *
- * @Author: Maximilian Schiedermeier
- * @Date: December 2020
+ * @author Maximilian Schiedermeier
  */
 public interface XoxGameReadOnly {
 
