@@ -1,6 +1,6 @@
 # Xox
 
-Server side java code of a simple game for academic case studies.
+**M**~~V~~**C** java code of a simple game for academic case studies.
 
 ![version](https://img.shields.io/badge/version-1.0-brightgreen)
 ![coverage](https://img.shields.io/badge/coverage-78%25-brightgreen)
