@@ -1,10 +1,8 @@
-package eu.kartoffelquadrat.lobbyservice.samplegame;
+package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.xoxinternals.XoxTestUtils;
 import eu.kartoffelquadrat.xoxinternals.controller.*;
 import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
 import eu.kartoffelquadrat.xoxinternals.model.Player;
-import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import org.junit.Test;
 
