@@ -7,7 +7,7 @@ import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
 import java.util.LinkedList;
 
 /**
- * This class is to demo / test the functionality of Xox. It has no relevance in a REST-serivce context.
+ * This class is to demo / test the functionality of Xox. It has no relevance in a REST context.
  *
  * @author Maximilian Schiedermeier
  */
