@@ -3,7 +3,7 @@
 **M**~~V~~**C** java code of a simple game for academic case studies.
 
 ![version](https://img.shields.io/badge/version-1.0-brightgreen)
-![coverage](https://img.shields.io/badge/coverage-78%25-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-81%25-brightgreen)
 ![building](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## About
