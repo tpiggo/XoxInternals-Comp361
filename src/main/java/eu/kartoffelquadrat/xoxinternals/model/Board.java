@@ -80,6 +80,22 @@ public class Board implements BoardReadOnly {
         return cells[yPos][xPos] == ' ';
     }
 
+    @Override
+    public char[][] getCells() {
+        //Create target copy of same size
+        char[][] copiedCells = new char[cells.length][cells[0].length];
+
+        // Fill target copy with identical values
+        for (int x = 0; x < copiedCells.length; x++) {
+            for (int y = 0; y < copiedCells[x].length; y++) {
+                copiedCells[x][y] = cells[x][y];
+            }
+        }
+
+        //return deep copy of cells.
+        return copiedCells;
+    }
+
     /**
      * Iterates over the board and initializes all cells with the whitespace character.
      */
@@ -100,10 +116,9 @@ public class Board implements BoardReadOnly {
     @Override
     public boolean isEmpty() {
         // iterate over all cells. return false if at least one cell occupied, true otherwise.
-        for( int x = 0; x < cells.length; x++)
-        {
-            for( int y = 0; y < cells[x].length; y++) {
-                if(!isFree(x, y))
+        for (int x = 0; x < cells.length; x++) {
+            for (int y = 0; y < cells[x].length; y++) {
+                if (!isFree(x, y))
                     return false;
             }
         }
@@ -113,19 +128,18 @@ public class Board implements BoardReadOnly {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder("");
 
         sb.append("\n -------------\n");
         for (int x = 0; x < cells.length; x++) {
             sb.append(" | ");
             for (int y = 0; y < cells[x].length; y++) {
-                if(cells[x][y] == ' ')
+                if (cells[x][y] == ' ')
                     sb.append('.');
                 else
                     sb.append(cells[x][y]).charAt(0);
-                    sb.append(" | ");
+                sb.append(" | ");
             }
             sb.append("\n");
             sb.append(" -------------\n");
