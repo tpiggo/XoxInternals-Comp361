@@ -2,6 +2,9 @@ package eu.kartoffelquadrat.xoxinternals;
 
 import eu.kartoffelquadrat.xoxinternals.controller.Action;
 import eu.kartoffelquadrat.xoxinternals.controller.XoxController;
+import eu.kartoffelquadrat.xoxinternals.model.Board;
+import eu.kartoffelquadrat.xoxinternals.model.BoardReadOnly;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Map;
@@ -105,5 +108,26 @@ public class ControllerTest extends XoxTestUtils {
 
         // Verify that now it is "O"s turn
         assert !XoxController.getInstance().getActions("O").isEmpty();
+
+        // Verify the board marks an X on the position that corresponds to the action, and blank on all other cells.
+        BoardReadOnly board = XoxController.getInstance().getBoard();
+        Assert.assertFalse(board.isEmpty());
+    }
+
+    @Test
+    public void testGetBoard()
+    {
+        XoxController.getInstance().resetGame();
+
+        // Init game, no inverted order.
+        initGame(false);
+
+        Board emptyReferenceBoard = new Board();
+
+        // Verify the game board is all empty.
+        BoardReadOnly board = XoxController.getInstance().getBoard();
+        Assert.assertTrue("Board of newly initialized game should be empty, but retrieved board object states it is not.", board.isEmpty());
+        Assert.assertFalse("Board of newly initialized games should not be full.", board.isFull());
+        Assert.assertTrue("String representation of board does not match empty board: "+board.toString(), board.toString().equals(emptyReferenceBoard.toString()));
     }
 }

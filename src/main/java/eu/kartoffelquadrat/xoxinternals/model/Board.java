@@ -99,7 +99,17 @@ public class Board implements BoardReadOnly {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        // iterate over all cells. return false if at least one cell occupied, true otherwise.
+        for( int x = 0; x < cells.length; x++)
+        {
+            for( int y = 0; y < cells[x].length; y++) {
+                if(!isFree(x, y))
+                    return false;
+            }
+        }
+
+        // All cells free, board is empty.
+        return true;
     }
 
     @Override
