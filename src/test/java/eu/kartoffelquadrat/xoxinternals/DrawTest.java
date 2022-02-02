@@ -103,6 +103,7 @@ public class DrawTest extends XoxTestUtils {
         // Verify there is no winner
         XoxRankingGenerator rankingGenerator = new XoxRankingGenerator();
         Ranking ranking = rankingGenerator.computeRanking(game);
+        String rankingString = ranking.toString();
 
         // In case of a draw, both players should hold 0 points.
         assert (ranking.getScoresDescending()[0] == 0);
