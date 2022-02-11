@@ -44,7 +44,7 @@
 
     <build>
         <!-- Override default name of generated jars -->
-        <finalName>Xox</finalName>
+        <finalName>XoxInternals</finalName>
 
         <plugins>
             <!-- set compiler version -->
