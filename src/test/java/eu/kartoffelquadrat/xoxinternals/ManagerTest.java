@@ -1,7 +1,6 @@
 package eu.kartoffelquadrat.xoxinternals;
 
 import eu.kartoffelquadrat.xoxinternals.controller.Action;
-import eu.kartoffelquadrat.xoxinternals.controller.XoxManager;
 import eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl;
 import eu.kartoffelquadrat.xoxinternals.model.Board;
 import eu.kartoffelquadrat.xoxinternals.model.BoardReadOnly;
@@ -28,7 +27,7 @@ public class ManagerTest extends XoxTestUtils {
         XoxManagerImpl.getInstance();
 
         XoxInitSettings initSettings = getDefaultInitSettings(true);
-        long gameId = XoxManagerImpl.getInstance().initGame(initSettings);
+        long gameId = XoxManagerImpl.getInstance().addGame(initSettings);
 
         // Verify player order - must be inverted, because player two was specified as start player
         assert XoxManagerImpl.getInstance().getActions(gameId, "X").isEmpty();
@@ -45,7 +44,7 @@ public class ManagerTest extends XoxTestUtils {
         XoxManagerImpl.getInstance();
 
         XoxInitSettings initSettings = getDefaultInitSettings(false);
-        long gameId = XoxManagerImpl.getInstance().initGame(initSettings);
+        long gameId = XoxManagerImpl.getInstance().addGame(initSettings);
 
         // Verify player order - must be inverted, because player two was specified as start player
         // Verify actions for current player (O) are non empty, actions for player (X) are empty
@@ -86,13 +85,13 @@ public class ManagerTest extends XoxTestUtils {
         XoxManagerImpl.getInstance();
 
         // Initialize new random game we can mess with
-        long gameId = XoxManagerImpl.getInstance().initGame(getDefaultInitSettings(false));
+        long gameId = XoxManagerImpl.getInstance().addGame(getDefaultInitSettings(false));
 
         // Obtain list of available actions. Play the first one.
         Map<String, Action> actions = XoxManagerImpl.getInstance().getActions(gameId, "X");
         Set<String> actionMD5s = actions.keySet();
         String firstActionMD5 = actionMD5s.iterator().next();
-        XoxManagerImpl.getInstance().selectAction(gameId, "X", firstActionMD5);
+        XoxManagerImpl.getInstance().performAction(gameId, "X", firstActionMD5);
 
         // Verify that now it is "O"s turn
         assert !XoxManagerImpl.getInstance().getActions(gameId, "O").isEmpty();
@@ -124,7 +123,7 @@ public class ManagerTest extends XoxTestUtils {
         XoxManagerImpl.getInstance();
 
         // Initialize new random game we can mess with
-        long gameId = XoxManagerImpl.getInstance().initGame(getDefaultInitSettings(false));
+        long gameId = XoxManagerImpl.getInstance().addGame(getDefaultInitSettings(false));
 
         //Verify the game is present
         BoardReadOnly board = XoxManagerImpl.getInstance().getBoard(gameId);

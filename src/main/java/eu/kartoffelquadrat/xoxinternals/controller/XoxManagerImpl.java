@@ -46,6 +46,11 @@ public class XoxManagerImpl implements XoxManager {
         return singletonReference;
     }
 
+    @Override
+    public Collection<Long> getGames() {
+        return games.keySet();
+    }
+
     /**
      * Removes an existing game, no matter the current state.
      */
@@ -63,7 +68,7 @@ public class XoxManagerImpl implements XoxManager {
      *                     creator)
      */
     @Override
-    public long initGame(XoxInitSettings initSettings) {
+    public long addGame(XoxInitSettings initSettings) {
 
         // Generate a new random game id
         long gameId = generateUniqueGameId();
@@ -143,7 +148,7 @@ public class XoxManagerImpl implements XoxManager {
      * @param actionMD5 as the identifier of the selected action
      */
     @Override
-    public void selectAction(long gameId, String player, String actionMD5) {
+    public void performAction(long gameId, String player, String actionMD5) {
 
         // Reject if no such game is currently initialized
         if (!games.containsKey(gameId))
