@@ -1,6 +1,7 @@
 package eu.kartoffelquadrat.xoxinternals;
 
 import eu.kartoffelquadrat.xoxinternals.controller.Action;
+import eu.kartoffelquadrat.xoxinternals.controller.XoxManager;
 import eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl;
 import eu.kartoffelquadrat.xoxinternals.model.Board;
 import eu.kartoffelquadrat.xoxinternals.model.BoardReadOnly;
@@ -88,7 +89,7 @@ public class ManagerTest extends XoxTestUtils {
         long gameId = XoxManagerImpl.getInstance().initGame(getDefaultInitSettings(false));
 
         // Obtain list of available actions. Play the first one.
-        Map<String, Action> actions = XoxManagerImpl.getInstance().getActions(gameId,"X");
+        Map<String, Action> actions = XoxManagerImpl.getInstance().getActions(gameId, "X");
         Set<String> actionMD5s = actions.keySet();
         String firstActionMD5 = actionMD5s.iterator().next();
         XoxManagerImpl.getInstance().selectAction(gameId, "X", firstActionMD5);
@@ -112,5 +113,28 @@ public class ManagerTest extends XoxTestUtils {
         Assert.assertTrue("Board of newly initialized game should be empty, but retrieved board object states it is not.", board.isEmpty());
         Assert.assertFalse("Board of newly initialized games should not be full.", board.isFull());
         Assert.assertTrue("String representation of board does not match empty board: " + board.toString(), board.toString().equals(emptyReferenceBoard.toString()));
+    }
+
+    /**
+     * This test alters state, it therefore operates on a newly created random game (avoids interference with previous
+     * test executions). It creates a new game and then tries to remove it again.
+     */
+    @Test
+    public void testRemoveGame() {
+        XoxManagerImpl.getInstance();
+
+        // Initialize new random game we can mess with
+        long gameId = XoxManagerImpl.getInstance().initGame(getDefaultInitSettings(false));
+
+        //Verify the game is present
+        BoardReadOnly board = XoxManagerImpl.getInstance().getBoard(gameId);
+        Assert.assertNotNull("Game was created but the associated board object is null", board);
+
+        // Try to remove game again
+        XoxManagerImpl.getInstance().removeGame(gameId);
+
+        // Verify the game is gone
+        board = XoxManagerImpl.getInstance().getBoard(gameId);
+        Assert.assertNull("Game was removed but the associated board object is not null", board);
     }
 }

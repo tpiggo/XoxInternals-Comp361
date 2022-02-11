@@ -49,7 +49,7 @@ public class XoxManagerImpl {
     /**
      * Removes an existing game, no matter the current state.
      */
-    public void removeGame(int gameId) {
+    public void removeGame(long gameId) {
 
         games.remove(gameId);
     }
