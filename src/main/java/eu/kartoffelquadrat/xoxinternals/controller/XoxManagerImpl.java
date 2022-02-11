@@ -13,7 +13,7 @@ import java.util.*;
  *
  * @author Maximilian Schiedermeier
  */
-public class XoxManagerImpl {
+public class XoxManagerImpl implements XoxManager {
 
     private static XoxManagerImpl singletonReference;
     private final ActionGenerator actionGenerator;
@@ -49,6 +49,7 @@ public class XoxManagerImpl {
     /**
      * Removes an existing game, no matter the current state.
      */
+    @Override
     public void removeGame(long gameId) {
 
         games.remove(gameId);
@@ -61,6 +62,7 @@ public class XoxManagerImpl {
      * @param initSettings as a settings bundle specifying details for the new game. (Player names, player colours,
      *                     creator)
      */
+    @Override
     public long initGame(XoxInitSettings initSettings) {
 
         // Generate a new random game id
@@ -79,6 +81,7 @@ public class XoxManagerImpl {
      *
      * @return immutable snapshot of current board.
      */
+    @Override
     public BoardReadOnly getBoard(long gameId) {
 
         if (!games.containsKey(gameId))
@@ -93,6 +96,7 @@ public class XoxManagerImpl {
      * @return immutably deep copy of players participating in game and their attributes (name, preferred colour). If no
      * such game is initialized, null is returned.
      */
+    @Override
     public PlayerReadOnly[] getPlayers(long gameId) {
 
         if (!games.containsKey(gameId))
@@ -108,6 +112,7 @@ public class XoxManagerImpl {
      * @return A map, indexing actions by the MD5 representation of their json string serialization. The index serves as
      * key for later re-identification if an actions is selected. Returns null if no such game is currently initialized.
      */
+    @Override
     public Map<String, Action> getActions(long gameId, String player) {
 
         // Reject if no game is currently initialized
@@ -137,6 +142,7 @@ public class XoxManagerImpl {
      * @param player    as the player requesting to play an action
      * @param actionMD5 as the identifier of the selected action
      */
+    @Override
     public void selectAction(long gameId, String player, String actionMD5) {
 
         // Reject if no such game is currently initialized
@@ -166,6 +172,7 @@ public class XoxManagerImpl {
      *
      * @return a ranking bundle object with details on the players and their scores.
      */
+    @Override
     public Ranking getRanking(long gameId) {
 
         // Reject if no such game is currently initialized
