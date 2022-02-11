@@ -21,16 +21,14 @@ public class XoxTestUtils {
      *
      * @param inverted puts player two as start player if set to true.
      */
-    public void initGame(boolean inverted) {
+    protected XoxInitSettings getDefaultInitSettings(boolean inverted) {
 
         // Add test game to gameManager
         LinkedList<Player> players = new LinkedList<>();
         players.add(new Player("X", "#FF0000"));
         players.add(new Player("O", "#00FF00"));
         String startPlayerName = (inverted?"O":"X");
-        XoxInitSettings initSettings = new XoxInitSettings(players, startPlayerName);
-        XoxManagerImpl controller = XoxManagerImpl.getInstance();
-        controller.initGame(initSettings);
+        return new XoxInitSettings(players, startPlayerName);
     }
 
     /**

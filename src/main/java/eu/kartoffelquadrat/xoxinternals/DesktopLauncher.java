@@ -34,13 +34,13 @@ public class DesktopLauncher {
         // Print some game details:
         // Players in seating order:
         System.out.println("Serialized players: ");
-        System.out.println(xoxManagerImpl.getPlayers()[0]);
-        System.out.println(xoxManagerImpl.getPlayers()[1]);
+        System.out.println(xoxManagerImpl.getPlayers(42)[0]);
+        System.out.println(xoxManagerImpl.getPlayers(42)[1]);
 
         // Board
-        System.out.println("Serialized initial board: " + xoxManagerImpl.getBoard());
+        System.out.println("Serialized initial board: " + xoxManagerImpl.getBoard(42));
 
         // Ranking
-        System.out.println("Serialized ranking: " + xoxManagerImpl.getRanking());
+        System.out.println("Serialized ranking: " + xoxManagerImpl.getRanking(42));
     }
 }

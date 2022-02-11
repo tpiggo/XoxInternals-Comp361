@@ -15,7 +15,6 @@ public class WinnerTestVertical extends XoxTestUtils {
 
     @Test
     public void testWinX() throws ModelAccessException, LogicException {
-        XoxManagerImpl.getInstance().resetGame();
 
         // Prepare the game
         Player x = new Player("X",  "#000000");

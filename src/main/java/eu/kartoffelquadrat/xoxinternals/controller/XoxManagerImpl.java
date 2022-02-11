@@ -16,8 +16,6 @@ import java.util.*;
 public class XoxManagerImpl {
 
     private static XoxManagerImpl singletonReference;
-
-    // Injected util beans and own service name.
     private final ActionGenerator actionGenerator;
     private final ActionInterpreter actionInterpreter;
     private final HashMap<Long, XoxGame> games;
@@ -69,7 +67,7 @@ public class XoxManagerImpl {
         long gameId = generateUniqueGameId();
 
         // If needed rearrange received array so that first player equals game creator
-        if (initSettings.getCreator().equals(initSettings.getPlayers().getFirst().getName()))
+        if (!initSettings.getCreator().equals(initSettings.getPlayers().getFirst().getName()))
             initSettings.getPlayers().add(initSettings.getPlayers().removeFirst());
 
         games.put(gameId, new XoxGame(initSettings.getPlayers().getFirst(), initSettings.getPlayers().getLast()));
