@@ -1,9 +1,9 @@
 # Xox
 
-**M**~~V~~**C** java code of a simple game for academic case studies.
+Vanilla java code of a simple implementation of Tic Tac Toe. Not user interface, only controller and model code.
 
-![version](https://img.shields.io/badge/version-1.0-brightgreen)
-![coverage](https://img.shields.io/badge/coverage-81%25-brightgreen)
+![version](https://img.shields.io/badge/version-1.1-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-84%25-brightgreen)
 ![building](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## About
