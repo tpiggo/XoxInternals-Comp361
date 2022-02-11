@@ -2,7 +2,7 @@ package eu.kartoffelquadrat.xoxinternals;
 
 import eu.kartoffelquadrat.xoxinternals.controller.Action;
 import eu.kartoffelquadrat.xoxinternals.controller.XoxClaimFieldAction;
-import eu.kartoffelquadrat.xoxinternals.controller.XoxController;
+import eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl;
 import eu.kartoffelquadrat.xoxinternals.model.Player;
 import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
 
@@ -29,7 +29,7 @@ public class XoxTestUtils {
         players.add(new Player("O", "#00FF00"));
         String startPlayerName = (inverted?"O":"X");
         XoxInitSettings initSettings = new XoxInitSettings(players, startPlayerName);
-        XoxController controller = XoxController.getInstance();
+        XoxManagerImpl controller = XoxManagerImpl.getInstance();
         controller.initGame(initSettings);
     }
 

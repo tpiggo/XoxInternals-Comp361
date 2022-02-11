@@ -1,10 +1,6 @@
 package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.xoxinternals.controller.XoxController;
-import eu.kartoffelquadrat.xoxinternals.model.Player;
-import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
-
-import java.util.LinkedList;
+import eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl;
 
 /**
  * This class is to demo / test the functionality of Xox. It has no relevance in a REST context.
@@ -29,31 +25,22 @@ public class DesktopLauncher {
      */
     public static void playXox() {
 
-        XoxController xoxController = XoxController.getInstance();
+        XoxManagerImpl xoxManagerImpl = XoxManagerImpl.getInstance();
 
         System.out.println("Welcome to the Xox.");
         System.out.println("-------------------------");
         System.out.println("Here is some feedback from the backend, simulation setup.");
 
-        // Start a new Session with sample players
-        LinkedList<Player> players = new LinkedList<>();
-        players.add(new Player("PlayerOne", "#FF0000"));
-        players.add(new Player("PlayerTwo", "#00FF00"));
-
-        // Use PlayerTwo as start player
-        XoxInitSettings initSettings = new XoxInitSettings(players, players.getLast().getName());
-        xoxController.initGame(initSettings);
-
         // Print some game details:
         // Players in seating order:
         System.out.println("Serialized players: ");
-        System.out.println(xoxController.getPlayers()[0]);
-        System.out.println(xoxController.getPlayers()[1]);
+        System.out.println(xoxManagerImpl.getPlayers()[0]);
+        System.out.println(xoxManagerImpl.getPlayers()[1]);
 
         // Board
-        System.out.println("Serialized initial board: " + xoxController.getBoard());
+        System.out.println("Serialized initial board: " + xoxManagerImpl.getBoard());
 
         // Ranking
-        System.out.println("Serialized ranking: " + xoxController.getRanking());
+        System.out.println("Serialized ranking: " + xoxManagerImpl.getRanking());
     }
 }

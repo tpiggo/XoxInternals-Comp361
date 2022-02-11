@@ -18,7 +18,7 @@ public class DrawTest extends XoxTestUtils {
 
     @Test
     public void testDraw() throws LogicException, ModelAccessException {
-        XoxController.getInstance().resetGame();
+        XoxManagerImpl.getInstance().resetGame();
 
         // Prepare the game
         Player x = new Player("X",  "#000000");
