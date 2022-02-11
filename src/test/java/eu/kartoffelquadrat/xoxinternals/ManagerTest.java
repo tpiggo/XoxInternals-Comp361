@@ -128,6 +128,7 @@ public class ManagerTest extends XoxTestUtils {
         //Verify the game is present
         BoardReadOnly board = XoxManagerImpl.getInstance().getBoard(gameId);
         Assert.assertNotNull("Game was created but the associated board object is null", board);
+        Assert.assertTrue("Game was created but ID is not listed by manager", XoxManagerImpl.getInstance().getGames().contains(gameId));
 
         // Try to remove game again
         XoxManagerImpl.getInstance().removeGame(gameId);
@@ -135,5 +136,6 @@ public class ManagerTest extends XoxTestUtils {
         // Verify the game is gone
         board = XoxManagerImpl.getInstance().getBoard(gameId);
         Assert.assertNull("Game was removed but the associated board object is not null", board);
+        Assert.assertFalse("Game was removed but ID is still listed by manager", XoxManagerImpl.getInstance().getGames().contains(gameId));
     }
 }
