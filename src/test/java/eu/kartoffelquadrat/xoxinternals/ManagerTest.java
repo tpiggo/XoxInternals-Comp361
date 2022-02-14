@@ -37,7 +37,7 @@ public class ManagerTest extends XoxTestUtils {
     }
 
     /**
-     * Verifies player one is start player is specified as start player.
+     * Verifies player one is specified as start player.
      */
     @Test
     public void testSeating() {
