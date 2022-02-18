@@ -8,7 +8,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
 public class XoxGame implements XoxGameReadOnly {
 
     // Read only access to the parameters of the two involved players.
-    private final PlayerReadOnly[] players = new PlayerReadOnly[2];
+    private final Player[] players = new Player[2];
 
     // Reference to current state of the board
     Board board;
@@ -49,8 +49,8 @@ public class XoxGame implements XoxGameReadOnly {
     }
 
     @Override
-    public PlayerReadOnly[] getPlayers() {
-        PlayerReadOnly[] deepCopy = new PlayerReadOnly[players.length];
+    public Player[] getPlayers() {
+        Player[] deepCopy = new Player[players.length];
         deepCopy[0] = players[0];
         deepCopy[1] = players[1];
         return deepCopy;

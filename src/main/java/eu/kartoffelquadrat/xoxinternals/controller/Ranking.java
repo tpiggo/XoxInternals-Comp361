@@ -1,6 +1,7 @@
 package eu.kartoffelquadrat.xoxinternals.controller;
 
 import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
 import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
 
 /**
@@ -11,11 +12,16 @@ import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
 public class Ranking {
 
     // Represents all players, ranked by their scored in descending order.
-    private final PlayerReadOnly[] playersDescending;
+    private Player[] playersDescending;
     // Represents the scores of all players, in descending order. (players match playerDescending array order)
-    private final int[] scoresDescending;
+    private int[] scoresDescending;
     // boolean flag indicating whether no more moves are possible by any player.
     private boolean gameOver;
+
+    /**
+     * Default constructor for deserialization frameworks
+     */
+    public Ranking() {}
 
     /**
      * Constructor for Ranking beans.
@@ -26,7 +32,7 @@ public class Ranking {
      * @param scoresDescending  the actual scores obtained by the corresponding players of the playersDescending array.
      * @param gameOver          flag to indicate whether no more moves are possible in this session.
      */
-    public Ranking(PlayerReadOnly[] playersDescending, int[] scoresDescending, boolean gameOver) {
+    public Ranking(Player[] playersDescending, int[] scoresDescending, boolean gameOver) {
 
         if (playersDescending.length != scoresDescending.length)
             throw new RuntimeException("Unable to create ranking. Provided players and scored differ in size.");

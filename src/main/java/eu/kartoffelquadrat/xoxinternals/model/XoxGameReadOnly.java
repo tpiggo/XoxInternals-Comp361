@@ -28,7 +28,7 @@ public interface XoxGameReadOnly {
      *
      * @return a deep copy of the player array associated to a game.
      */
-    PlayerReadOnly[] getPlayers();
+    Player[] getPlayers();
 
     /**
      * Returns bundled information on a player, accessed by the player index within this game instance.
