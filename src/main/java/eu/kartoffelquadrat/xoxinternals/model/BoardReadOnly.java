@@ -13,6 +13,6 @@ public interface BoardReadOnly {
 
     boolean isFree(int xPos, int yPos);
 
-    char[][] getCells();
+    int[][] getCells();
 
 }

@@ -10,13 +10,13 @@ public class Board implements BoardReadOnly {
 
     // States of cells are encoded by Characters:
     // ' ': empty. 'x': occupied by x, 'o': occupied by o, 'X' winning cell of x, 'O' winning cell of o.
-    private final char[][] cells;
+    private final int[][] cells;
 
     /**
      * Default constructor for Xox boards. Creates an empty 3x3 cell matrix.
      */
     public Board() {
-        cells = new char[3][3];
+        cells = new int[3][3];
         initCells();
     }
 
@@ -30,7 +30,7 @@ public class Board implements BoardReadOnly {
 
         for (int x = 0; x < cells.length; x++) {
             for (int y = 0; y < cells[x].length; y++) {
-                if (cells[x][y] == ' ')
+                if (cells[x][y] == 0)
                     return false;
             }
         }
@@ -44,7 +44,7 @@ public class Board implements BoardReadOnly {
      */
     public boolean isThreeInALine() {
 
-        return (getThreeInALineCharIfExists() != ' ');
+        return (getThreeInALineCharIfExists() != 0);
     }
 
     /**
@@ -53,7 +53,7 @@ public class Board implements BoardReadOnly {
      *
      * @return a character indicating the occupier of the line or a whitespace.
      */
-    public char getThreeInALineCharIfExists() {
+    public int getThreeInALineCharIfExists() {
         // check for three in a row
         for (int y = 0; y < cells[0].length; y++) {
             if (cells[0][y] == cells[1][y] && cells[1][y] == cells[2][y])
@@ -72,18 +72,18 @@ public class Board implements BoardReadOnly {
         if (cells[0][2] == cells[1][1] && cells[1][1] == cells[2][0])
             return cells[1][1];
 
-        return ' ';
+        return 0;
     }
 
     public boolean isFree(int xPos, int yPos) {
 
-        return cells[yPos][xPos] == ' ';
+        return cells[yPos][xPos] == 0;
     }
 
     @Override
-    public char[][] getCells() {
+    public int[][] getCells() {
         //Create target copy of same size
-        char[][] copiedCells = new char[cells.length][cells[0].length];
+        int[][] copiedCells = new int[cells.length][cells[0].length];
 
         // Fill target copy with identical values
         for (int x = 0; x < copiedCells.length; x++) {
@@ -102,7 +102,7 @@ public class Board implements BoardReadOnly {
     private void initCells() {
         for (int x = 0; x < cells.length; x++) {
             for (int y = 0; y < cells[x].length; y++) {
-                cells[x][y] = ' ';
+                cells[x][y] = 0;
             }
         }
     }
@@ -110,7 +110,7 @@ public class Board implements BoardReadOnly {
     public void occupy(int xPos, int yPos, boolean firstPlayer) throws ModelAccessException {
         if (!isFree(xPos, yPos))
             throw new ModelAccessException("Requested cell can not by occupied. Is not free.");
-        cells[yPos][xPos] = (firstPlayer ? 'x' : 'o');
+        cells[yPos][xPos] = (firstPlayer ? 1 : 2);
     }
 
     @Override
