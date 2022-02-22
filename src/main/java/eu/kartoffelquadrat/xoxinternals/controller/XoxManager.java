@@ -19,9 +19,9 @@ public interface XoxManager {
 
     PlayerReadOnly[] getPlayers(long gameId);
 
-    Map<String, Action> getActions(long gameId, String player);
+    Action[] getActions(long gameId, String player);
 
-    void performAction(long gameId, String player, String actionMD5);
+    void performAction(long gameId, String player, int actionIndex);
 
     Ranking getRanking(long gameId);
 }

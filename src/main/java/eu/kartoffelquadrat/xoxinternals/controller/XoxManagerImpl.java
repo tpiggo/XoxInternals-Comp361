@@ -118,7 +118,7 @@ public class XoxManagerImpl implements XoxManager {
      * key for later re-identification if an actions is selected. Returns null if no such game is currently initialized.
      */
     @Override
-    public Map<String, Action> getActions(long gameId, String player) {
+    public Action[] getActions(long gameId, String player) {
 
         // Reject if no game is currently initialized
         if (!games.containsKey(gameId))
@@ -130,13 +130,13 @@ public class XoxManagerImpl implements XoxManager {
 
             // Return empty map if the player is not recognized.
             // Error handling ignored for case study simplicity.
-            return new LinkedHashMap<>();
+            return new Action[]{};
         try {
-            return actionGenerator.generateActions(games.get(gameId), playerObject);
+            return actionGenerator.generateActions(games.get(gameId), playerObject).values().toArray(new Action[]{});
         } catch (LogicException e) {
 
             // Error handling ignored for case study simplicity.
-            return new LinkedHashMap<>();
+            return new Action[]{};
         }
     }
 
@@ -145,24 +145,20 @@ public class XoxManagerImpl implements XoxManager {
      * representation of it's JSON serialization.
      *
      * @param player    as the player requesting to play an action
-     * @param actionMD5 as the identifier of the selected action
+     * @param actionIndex as the index of the selected action in the original actions array
      */
     @Override
-    public void performAction(long gameId, String player, String actionMD5) {
+    public void performAction(long gameId, String player, int actionIndex) {
 
         // Reject if no such game is currently initialized
         if (!games.containsKey(gameId))
             return;
 
         // Verify the selected action was actually offered
-        Map<String, Action> offeredActions = getActions(gameId, player);
-        if (!offeredActions.containsKey(actionMD5))
-            // Error handling ignored for case study simplicity.
-            // Ignore request if selected action was not previously offered.
-            return;
+        Action[] offeredActions = getActions(gameId, player);
 
         // Looks good - perform the action by passing it to the XoxActionInterpreter
-        Action selectedAction = offeredActions.get(actionMD5);
+        Action selectedAction = offeredActions[actionIndex];
         try {
             actionInterpreter.interpretAndApplyAction(selectedAction, games.get(gameId));
         } catch (LogicException | ModelAccessException internalException) {

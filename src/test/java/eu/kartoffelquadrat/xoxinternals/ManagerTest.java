@@ -30,8 +30,8 @@ public class ManagerTest extends XoxTestUtils {
         long gameId = XoxManagerImpl.getInstance().addGame(initSettings);
 
         // Verify player order - must be inverted, because player two was specified as start player
-        assert XoxManagerImpl.getInstance().getActions(gameId, "X").isEmpty();
-        assert !XoxManagerImpl.getInstance().getActions(gameId, "O").isEmpty();
+        assert XoxManagerImpl.getInstance().getActions(gameId, "X").length==0;
+        assert XoxManagerImpl.getInstance().getActions(gameId, "O").length!=0;
         assert XoxManagerImpl.getInstance().getPlayers(gameId)[0].getName().equals("O");
         assert XoxManagerImpl.getInstance().getPlayers(gameId)[1].getName().equals("X");
     }
@@ -48,8 +48,8 @@ public class ManagerTest extends XoxTestUtils {
 
         // Verify player order - must be inverted, because player two was specified as start player
         // Verify actions for current player (O) are non empty, actions for player (X) are empty
-        assert !XoxManagerImpl.getInstance().getActions(gameId, "X").isEmpty();
-        assert XoxManagerImpl.getInstance().getActions(gameId, "O").isEmpty();
+        assert XoxManagerImpl.getInstance().getActions(gameId, "X").length!=0;
+        assert XoxManagerImpl.getInstance().getActions(gameId, "O").length==0;
         assert XoxManagerImpl.getInstance().getPlayers(gameId)[0].getName().equals("X");
         assert XoxManagerImpl.getInstance().getPlayers(gameId)[1].getName().equals("O");
     }
@@ -88,13 +88,11 @@ public class ManagerTest extends XoxTestUtils {
         long gameId = XoxManagerImpl.getInstance().addGame(getDefaultInitSettings(false));
 
         // Obtain list of available actions. Play the first one.
-        Map<String, Action> actions = XoxManagerImpl.getInstance().getActions(gameId, "X");
-        Set<String> actionMD5s = actions.keySet();
-        String firstActionMD5 = actionMD5s.iterator().next();
-        XoxManagerImpl.getInstance().performAction(gameId, "X", firstActionMD5);
+        Action[] actions = XoxManagerImpl.getInstance().getActions(gameId, "X");
+        XoxManagerImpl.getInstance().performAction(gameId, "X", 0);
 
         // Verify that now it is "O"s turn
-        assert !XoxManagerImpl.getInstance().getActions(gameId, "O").isEmpty();
+        assert XoxManagerImpl.getInstance().getActions(gameId, "O").length != 0;
 
         // Verify the board marks an X on the position that corresponds to the action, and blank on all other cells.
         BoardReadOnly board = XoxManagerImpl.getInstance().getBoard(gameId);
