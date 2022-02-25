@@ -1,15 +1,12 @@
 package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.xoxinternals.controller.Action;
+import eu.kartoffelquadrat.xoxinternals.controller.XoxClaimFieldAction;
 import eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl;
 import eu.kartoffelquadrat.xoxinternals.model.Board;
 import eu.kartoffelquadrat.xoxinternals.model.BoardReadOnly;
 import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Map;
-import java.util.Set;
 
 
 /**
@@ -88,7 +85,7 @@ public class ManagerTest extends XoxTestUtils {
         long gameId = XoxManagerImpl.getInstance().addGame(getDefaultInitSettings(false));
 
         // Obtain list of available actions. Play the first one.
-        Action[] actions = XoxManagerImpl.getInstance().getActions(gameId, "X");
+        XoxClaimFieldAction[] actions = XoxManagerImpl.getInstance().getActions(gameId, "X");
         XoxManagerImpl.getInstance().performAction(gameId, "X", 0);
 
         // Verify that now it is "O"s turn

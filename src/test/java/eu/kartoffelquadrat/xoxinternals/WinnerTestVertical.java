@@ -30,7 +30,7 @@ public class WinnerTestVertical extends XoxTestUtils {
 
         // 1)
         // X retrieves actions, decides for action on top left.
-        Map<String, Action> xActions = actionGenerator.generateActions(game, x);
+        Map<String, XoxClaimFieldAction> xActions = actionGenerator.generateActions(game, x);
         assert (xActions.size() == 9);
         XoxClaimFieldAction action1 = findActionForPosition(xActions, 1, 0);
 
@@ -40,7 +40,7 @@ public class WinnerTestVertical extends XoxTestUtils {
 
         // 2)
         // Y retrieves actions, decides for action bottom right, apply second action
-        Map<String, Action> yActions = actionGenerator.generateActions(game, o);
+        Map<String, XoxClaimFieldAction> yActions = actionGenerator.generateActions(game, o);
         assert (yActions.size() == 8);
         XoxClaimFieldAction action2 = findActionForPosition(yActions, 0, 0);
         actionInterpreter.interpretAndApplyAction(action2, game);

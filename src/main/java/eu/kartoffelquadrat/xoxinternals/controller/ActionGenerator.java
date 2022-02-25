@@ -1,6 +1,7 @@
 package eu.kartoffelquadrat.xoxinternals.controller;
 
-import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
+import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGameReadOnly;
 
 import java.util.Map;
@@ -21,5 +22,5 @@ public interface ActionGenerator {
      * (action)
      * @throws LogicException in case the provided game type is not supported
      */
-    Map<String, Action> generateActions(XoxGameReadOnly game, PlayerReadOnly player) throws LogicException;
+    Map<String, XoxClaimFieldAction> generateActions(XoxGameReadOnly game, Player player) throws LogicException;
 }

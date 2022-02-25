@@ -19,5 +19,5 @@ public interface ActionInterpreter {
      * @throws LogicException in case the provided action can not be applied.
      * @throws ModelAccessException in case the provided action attempts to modify restricted parts of the model.
      */
-    void interpretAndApplyAction(Action action, XoxGameReadOnly game) throws LogicException, ModelAccessException;
+    void interpretAndApplyAction(XoxClaimFieldAction action, XoxGameReadOnly game) throws LogicException, ModelAccessException;
 }

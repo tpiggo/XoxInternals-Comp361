@@ -16,7 +16,7 @@ import java.util.*;
 public class XoxManagerImpl implements XoxManager {
 
     private static XoxManagerImpl singletonReference;
-    private final ActionGenerator actionGenerator;
+    private final XoxActionGenerator actionGenerator;
     private final ActionInterpreter actionInterpreter;
     private final HashMap<Long, XoxGame> games;
     private final RankingGenerator rankingGenerator;
@@ -102,7 +102,7 @@ public class XoxManagerImpl implements XoxManager {
      * such game is initialized, null is returned.
      */
     @Override
-    public PlayerReadOnly[] getPlayers(long gameId) {
+    public Player[] getPlayers(long gameId) {
 
         if (!games.containsKey(gameId))
             return null;
@@ -118,25 +118,25 @@ public class XoxManagerImpl implements XoxManager {
      * key for later re-identification if an actions is selected. Returns null if no such game is currently initialized.
      */
     @Override
-    public Action[] getActions(long gameId, String player) {
+    public XoxClaimFieldAction[] getActions(long gameId, String player) {
 
         // Reject if no game is currently initialized
         if (!games.containsKey(gameId))
             return null;
 
         // Look up player and build an action bundle. (only non empty for current player)
-        PlayerReadOnly playerObject = games.get(gameId).getPlayerByName(player);
+        Player playerObject = games.get(gameId).getPlayerByName(player);
         if (playerObject == null)
 
             // Return empty map if the player is not recognized.
             // Error handling ignored for case study simplicity.
-            return new Action[]{};
+            return new XoxClaimFieldAction[]{};
         try {
-            return actionGenerator.generateActions(games.get(gameId), playerObject).values().toArray(new Action[]{});
+            return actionGenerator.generateActions(games.get(gameId), playerObject).values().toArray(new XoxClaimFieldAction[]{});
         } catch (LogicException e) {
 
             // Error handling ignored for case study simplicity.
-            return new Action[]{};
+            return new XoxClaimFieldAction[]{};
         }
     }
 
@@ -155,10 +155,10 @@ public class XoxManagerImpl implements XoxManager {
             return;
 
         // Verify the selected action was actually offered
-        Action[] offeredActions = getActions(gameId, player);
+        XoxClaimFieldAction[] offeredActions = getActions(gameId, player);
 
         // Looks good - perform the action by passing it to the XoxActionInterpreter
-        Action selectedAction = offeredActions[actionIndex];
+        XoxClaimFieldAction selectedAction = offeredActions[actionIndex];
         try {
             actionInterpreter.interpretAndApplyAction(selectedAction, games.get(gameId));
         } catch (LogicException | ModelAccessException internalException) {

@@ -5,7 +5,7 @@ package eu.kartoffelquadrat.xoxinternals.model;
  *
  * @author Maximilian Schiedermeier
  */
-public class Player implements PlayerReadOnly {
+public class Player  {
 
     String name;
     String preferredColour;

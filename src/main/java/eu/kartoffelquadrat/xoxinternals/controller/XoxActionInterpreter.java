@@ -1,6 +1,7 @@
 package eu.kartoffelquadrat.xoxinternals.controller;
 
 import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGameReadOnly;
 
@@ -15,17 +16,17 @@ import java.util.Collection;
  */
 public class XoxActionInterpreter implements ActionInterpreter {
 
-    private final ActionGenerator actionGenerator;
+    private final XoxActionGenerator actionGenerator;
 
     private final XoxEndingAnalyzer endingAnalyzer;
 
-    public XoxActionInterpreter(ActionGenerator actionGenerator, XoxEndingAnalyzer endingAnalyzer) {
+    public XoxActionInterpreter(XoxActionGenerator actionGenerator, XoxEndingAnalyzer endingAnalyzer) {
         this.actionGenerator = actionGenerator;
         this.endingAnalyzer = endingAnalyzer;
     }
 
     @Override
-    public void interpretAndApplyAction(Action action, XoxGameReadOnly game) throws LogicException, ModelAccessException {
+    public void interpretAndApplyAction(XoxClaimFieldAction action, XoxGameReadOnly game) throws LogicException, ModelAccessException {
 
         // Verify action and game input type
         if (action.getClass() != XoxClaimFieldAction.class)
@@ -56,10 +57,10 @@ public class XoxActionInterpreter implements ActionInterpreter {
     private boolean isValidAction(XoxGameReadOnly game, XoxClaimFieldAction selectedAction) throws LogicException {
 
         // retrieve all valid actions for player
-        Collection<Action> validActions = actionGenerator.generateActions(game, selectedAction.getPlayer()).values();
+        Collection<XoxClaimFieldAction> validActions = actionGenerator.generateActions(game, selectedAction.getPlayer()).values();
 
         // look up if provided action is contained
-        for (Action currentAction : validActions) {
+        for (XoxClaimFieldAction currentAction : validActions) {
             if (currentAction.equals(selectedAction))
                 return true;
         }

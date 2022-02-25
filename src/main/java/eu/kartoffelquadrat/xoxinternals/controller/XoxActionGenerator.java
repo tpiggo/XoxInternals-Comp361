@@ -1,7 +1,7 @@
 package eu.kartoffelquadrat.xoxinternals.controller;
 
 import eu.kartoffelquadrat.xoxinternals.model.BoardReadOnly;
-import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGameReadOnly;
 
@@ -26,7 +26,7 @@ public class XoxActionGenerator implements ActionGenerator {
      * @param player as the player object of the participant to test.
      * @return a boolean, indicating whether the provided name is a valid player name.
      */
-    private static boolean isParticipant(XoxGameReadOnly game, PlayerReadOnly player) {
+    private static boolean isParticipant(XoxGameReadOnly game, Player player) {
         return game.getPlayerInfo(0).getName().equals(player.getName()) ||
                 game.getPlayerInfo(1).getName().equals(player.getName());
     }
@@ -38,8 +38,8 @@ public class XoxActionGenerator implements ActionGenerator {
      * @return an array of possible lay actions.
      * @throws LogicException in case one of the resulting player actions could not be correctly created.
      */
-    private static Map<String, Action> emptyCellsToActions(BoardReadOnly board, PlayerReadOnly player) throws LogicException {
-        Map<String, Action> actionMap = new LinkedHashMap();
+    private static Map<String, XoxClaimFieldAction> emptyCellsToActions(BoardReadOnly board, Player player) throws LogicException {
+        Map<String, XoxClaimFieldAction> actionMap = new LinkedHashMap();
 
         // Iterate over board
         for (int yPos = 0; yPos < 3; yPos++) {
@@ -47,7 +47,7 @@ public class XoxActionGenerator implements ActionGenerator {
 
                 // Add an action if the position is free
                 if (board.isFree(xPos, yPos)) {
-                    Action action = new XoxClaimFieldAction(xPos, yPos, player);
+                    XoxClaimFieldAction action = new XoxClaimFieldAction(xPos, yPos, player);
                     String actionMd5 = actionToHash(action);
                     actionMap.put(actionMd5, action);
                 }
@@ -62,7 +62,7 @@ public class XoxActionGenerator implements ActionGenerator {
      *
      * @param action
      */
-    private static String actionToHash(Action action) {
+    private static String actionToHash(XoxClaimFieldAction action) {
 
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -81,7 +81,7 @@ public class XoxActionGenerator implements ActionGenerator {
      * @return Map translating from unique action identifiers to the actual actions.
      */
     @Override
-    public Map<String, Action> generateActions(XoxGameReadOnly game, PlayerReadOnly player) throws LogicException {
+    public Map<String, XoxClaimFieldAction> generateActions(XoxGameReadOnly game, Player player) throws LogicException {
 
         // Verify and cast the game type
         if (game.getClass() != XoxGame.class)

@@ -1,6 +1,6 @@
 package eu.kartoffelquadrat.xoxinternals.controller;
 
-import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
+import eu.kartoffelquadrat.xoxinternals.model.Player;
 
 /**
  * Represents the only kind of blackboard action required in Xox. The Claim-Field action encodes a position, specified
@@ -8,11 +8,11 @@ import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
  *
  * @author Maximilian Schiedermeier
  */
-public class XoxClaimFieldAction implements Action {
+public class XoxClaimFieldAction {
 
     private final int x;
     private final int y;
-    private final PlayerReadOnly player;
+    private final Player player;
 
     /**
      * Constructor for a Xox action encoding the action that represents marking a specific cell (specified by x/y
@@ -23,7 +23,7 @@ public class XoxClaimFieldAction implements Action {
      * @param player as the player for who the action is generated.
      * @throws LogicException in case one of the provided position parameters is out of bounds.
      */
-    public XoxClaimFieldAction(int x, int y, PlayerReadOnly player) throws LogicException {
+    public XoxClaimFieldAction(int x, int y, Player player) throws LogicException {
         if (x < 0 || x > 2)
             throw new LogicException("Xox action can not be created. X position is out of bounds.");
         if (y < 0 || y > 2)
@@ -57,7 +57,7 @@ public class XoxClaimFieldAction implements Action {
      *
      * @return player this action was built for / the player claiming the specified cell if this action is applied.
      */
-    public PlayerReadOnly getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 

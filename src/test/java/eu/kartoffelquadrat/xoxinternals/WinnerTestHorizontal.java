@@ -4,7 +4,6 @@ package eu.kartoffelquadrat.xoxinternals;
 import eu.kartoffelquadrat.xoxinternals.controller.*;
 import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
 import eu.kartoffelquadrat.xoxinternals.model.Player;
-import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
 import eu.kartoffelquadrat.xoxinternals.model.XoxGame;
 import org.junit.Test;
 
@@ -32,7 +31,7 @@ public class WinnerTestHorizontal extends XoxTestUtils {
 
         // 1)
         // X retrieves actions, decides for action on top left.
-        Map<String, Action> xActions = actionGenerator.generateActions(game, x);
+        Map<String, XoxClaimFieldAction> xActions = actionGenerator.generateActions(game, x);
         assert (xActions.size() == 9);
         XoxClaimFieldAction action1 = findActionForPosition(xActions, 0, 0);
 
@@ -42,7 +41,7 @@ public class WinnerTestHorizontal extends XoxTestUtils {
 
         // 2)
         // Y retrieves actions, decides for action bottom right, apply second action
-        Map<String, Action> yActions = actionGenerator.generateActions(game, o);
+        Map<String, XoxClaimFieldAction> yActions = actionGenerator.generateActions(game, o);
         assert (yActions.size() == 8);
         XoxClaimFieldAction action2 = findActionForPosition(yActions, 0, 1);
         actionInterpreter.interpretAndApplyAction(action2, game);

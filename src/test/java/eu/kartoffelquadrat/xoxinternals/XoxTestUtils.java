@@ -1,8 +1,6 @@
 package eu.kartoffelquadrat.xoxinternals;
 
-import eu.kartoffelquadrat.xoxinternals.controller.Action;
 import eu.kartoffelquadrat.xoxinternals.controller.XoxClaimFieldAction;
-import eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl;
 import eu.kartoffelquadrat.xoxinternals.model.Player;
 import eu.kartoffelquadrat.xoxinternals.model.XoxInitSettings;
 
@@ -34,9 +32,9 @@ public class XoxTestUtils {
     /**
      * Helper method to extract the desired action of an actions bundle. The action is identified by gird position.
      */
-    public XoxClaimFieldAction findActionForPosition(Map<String, Action> actions, int xPos, int yPos) {
+    public XoxClaimFieldAction findActionForPosition(Map<String, XoxClaimFieldAction> actions, int xPos, int yPos) {
 
-        for(Action action : actions.values())
+        for(XoxClaimFieldAction action : actions.values())
         {
             if(action.getClass() != XoxClaimFieldAction.class)
                 throw new RuntimeException("Action map can not be interpreted - not Xox actions");

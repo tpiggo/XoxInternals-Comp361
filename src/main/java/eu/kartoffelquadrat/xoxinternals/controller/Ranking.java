@@ -2,7 +2,6 @@ package eu.kartoffelquadrat.xoxinternals.controller;
 
 import eu.kartoffelquadrat.xoxinternals.model.ModelAccessException;
 import eu.kartoffelquadrat.xoxinternals.model.Player;
-import eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly;
 
 /**
  * Represents player scores. Can be created at any point during the gameplay or at the end of the game for final stats.
@@ -48,7 +47,7 @@ public class Ranking {
      *
      * @return the player details as an array.
      */
-    public PlayerReadOnly[] getPlayersDescending() {
+    public Player[] getPlayersDescending() {
         return playersDescending;
     }
 
