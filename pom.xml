@@ -54,6 +54,12 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <!-- Inlcude parameter names so artifacts from this library are easier to acces by reflection-->
+                    <fork>true</fork>
+                    <compilerArgs>
+                    <arg>-parameters</arg>
+                    <arg>-g:source,lines,vars</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
