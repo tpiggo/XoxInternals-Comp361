@@ -48,8 +48,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/ActionInterpreter.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/ActionInterpreter.html" title="interface in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/kartoffelquadrat/xoxinternals/controller/ActionGenerator.html" target="_top">Frames</a></li>
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">eu.kartoffelquadrat.xoxinternals.controller</div>
+<div class="subTitle">eu.kartoffelquadrat.xoxinternals.service</div>
 <h2 title="Interface ActionGenerator" class="title">Interface ActionGenerator</h2>
 </div>
 <div class="contentContainer">
@@ -100,7 +100,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxActionGenerator.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">XoxActionGenerator</a></dd>
+<dd><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxActionGenerator.html" title="class in eu.kartoffelquadrat.xoxinternals.service">XoxActionGenerator</a></dd>
 </dl>
 <hr>
 <br>
@@ -129,7 +129,7 @@ var activeTableTab = "activeTableTab";
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller">Action</a>&gt;</code></td>
+<td class="colFirst"><code>java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.service">Action</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/ActionGenerator.html#generateActions-eu.kartoffelquadrat.xoxinternals.model.XoxGameReadOnly-eu.kartoffelquadrat.xoxinternals.model.PlayerReadOnly-">generateActions</a></span>(<a href="../../../../eu/kartoffelquadrat/xoxinternals/model/XoxGameReadOnly.html" title="interface in eu.kartoffelquadrat.xoxinternals.model">XoxGameReadOnly</a>&nbsp;game,
                <a href="../../../../eu/kartoffelquadrat/xoxinternals/model/PlayerReadOnly.html" title="interface in eu.kartoffelquadrat.xoxinternals.model">PlayerReadOnly</a>&nbsp;player)</code>
 <div class="block">Generates a map of actions, where each object is indexed by the MD5 hash of its json string representation.</div>
@@ -156,9 +156,9 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generateActions</h4>
-<pre>java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller">Action</a>&gt;&nbsp;generateActions(<a href="../../../../eu/kartoffelquadrat/xoxinternals/model/XoxGameReadOnly.html" title="interface in eu.kartoffelquadrat.xoxinternals.model">XoxGameReadOnly</a>&nbsp;game,
+<pre>java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.service">Action</a>&gt;&nbsp;generateActions(<a href="../../../../eu/kartoffelquadrat/xoxinternals/model/XoxGameReadOnly.html" title="interface in eu.kartoffelquadrat.xoxinternals.model">XoxGameReadOnly</a>&nbsp;game,
                                                        <a href="../../../../eu/kartoffelquadrat/xoxinternals/model/PlayerReadOnly.html" title="interface in eu.kartoffelquadrat.xoxinternals.model">PlayerReadOnly</a>&nbsp;player)
-                                                throws <a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/LogicException.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">LogicException</a></pre>
+                                                throws <a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/LogicException.html" title="class in eu.kartoffelquadrat.xoxinternals.service">LogicException</a></pre>
 <div class="block">Generates a map of actions, where each object is indexed by the MD5 hash of its json string representation.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -168,7 +168,7 @@ var activeTableTab = "activeTableTab";
 <dd>a map where every entry key is the MD5 of the JSON string representation for the associated value
  (action)</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/LogicException.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">LogicException</a></code> - in case the provided game type is not supported</dd>
+<dd><code><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/LogicException.html" title="class in eu.kartoffelquadrat.xoxinternals.service">LogicException</a></code> - in case the provided game type is not supported</dd>
 </dl>
 </li>
 </ul>
@@ -199,8 +199,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/ActionInterpreter.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/ActionInterpreter.html" title="interface in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/kartoffelquadrat/xoxinternals/controller/ActionGenerator.html" target="_top">Frames</a></li>

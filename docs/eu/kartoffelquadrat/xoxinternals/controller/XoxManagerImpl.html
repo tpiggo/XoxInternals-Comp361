@@ -48,8 +48,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManager.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxRankingGenerator.html" title="class in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManager.html" title="interface in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxRankingGenerator.html" title="class in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html" target="_top">Frames</a></li>
@@ -91,7 +91,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">eu.kartoffelquadrat.xoxinternals.controller</div>
+<div class="subTitle">eu.kartoffelquadrat.xoxinternals.service</div>
 <h2 title="Class XoxManagerImpl" class="title">Class XoxManagerImpl</h2>
 </div>
 <div class="contentContainer">
@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>eu.kartoffelquadrat.xoxinternals.controller.XoxManagerImpl</li>
+<li>org.tpiggo.xoxinternals.service.XoxManagerImpl</li>
 </ul>
 </li>
 </ul>
@@ -137,7 +137,7 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller">Action</a>&gt;</code></td>
+<td class="colFirst"><code>java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.service">Action</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html#getActions-long-java.lang.String-">getActions</a></span>(long&nbsp;gameId,
           java.lang.String&nbsp;player)</code>
 <div class="block">Method to look up possible actions for a given player.</div>
@@ -150,7 +150,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">XoxManagerImpl</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html" title="class in eu.kartoffelquadrat.xoxinternals.service">XoxManagerImpl</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html#getInstance--">getInstance</a></span>()</code>
 <div class="block">Singleton access method to obtain the controller instance.</div>
 </td>
@@ -163,7 +163,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Ranking.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">Ranking</a></code></td>
+<td class="colFirst"><code><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Ranking.html" title="class in eu.kartoffelquadrat.xoxinternals.service">Ranking</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html#getRanking-long-">getRanking</a></span>(long&nbsp;gameId)</code>
 <div class="block">Returns current player scores as a serialized ranking object.</div>
 </td>
@@ -216,7 +216,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getInstance</h4>
-<pre>public static&nbsp;<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">XoxManagerImpl</a>&nbsp;getInstance()</pre>
+<pre>public static&nbsp;<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html" title="class in eu.kartoffelquadrat.xoxinternals.service">XoxManagerImpl</a>&nbsp;getInstance()</pre>
 <div class="block">Singleton access method to obtain the controller instance. First call implicitly initializes a new game for
  players "X" and "O".</div>
 <dl>
@@ -287,7 +287,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getActions</h4>
-<pre>public&nbsp;java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller">Action</a>&gt;&nbsp;getActions(long&nbsp;gameId,
+<pre>public&nbsp;java.util.Map&lt;java.lang.String,<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Action.html" title="interface in eu.kartoffelquadrat.xoxinternals.service">Action</a>&gt;&nbsp;getActions(long&nbsp;gameId,
                                                          java.lang.String&nbsp;player)</pre>
 <div class="block">Method to look up possible actions for a given player.</div>
 <dl>
@@ -324,7 +324,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getRanking</h4>
-<pre>public&nbsp;<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Ranking.html" title="class in eu.kartoffelquadrat.xoxinternals.controller">Ranking</a>&nbsp;getRanking(long&nbsp;gameId)</pre>
+<pre>public&nbsp;<a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/Ranking.html" title="class in eu.kartoffelquadrat.xoxinternals.service">Ranking</a>&nbsp;getRanking(long&nbsp;gameId)</pre>
 <div class="block">Returns current player scores as a serialized ranking object. The ranking object also tells if the game has
  already ended.</div>
 <dl>
@@ -360,8 +360,8 @@ extends java.lang.Object</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManager.html" title="interface in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxRankingGenerator.html" title="class in eu.kartoffelquadrat.xoxinternals.controller"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxManager.html" title="interface in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../eu/kartoffelquadrat/xoxinternals/controller/XoxRankingGenerator.html" title="class in eu.kartoffelquadrat.xoxinternals.service"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/kartoffelquadrat/xoxinternals/controller/XoxManagerImpl.html" target="_top">Frames</a></li>
