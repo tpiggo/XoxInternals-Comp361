@@ -35,7 +35,7 @@ public class PlayerController {
         xoxService.performAction(id, name, action);
     }
 
-    @PostMapping("/{id}/{name}/actions")
+    @PostMapping("/{id}/{name}/action")
     public void movePlayerBetter(@PathVariable("id") Long id, @PathVariable("name") String name,
                            @RequestBody ActionRequest actionRequest) {
         xoxService.performAction(id, name, actionRequest.getActionId());
